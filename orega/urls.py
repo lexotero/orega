@@ -1,10 +1,12 @@
 # (c) 2017 Orega S.L.
+
 from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', include('apps.site.urls', namespace='site')),
 ]
 
 if settings.DEBUG:
