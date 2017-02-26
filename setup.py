@@ -12,6 +12,7 @@ setup(
     install_requires=[
         'django==1.10.5',
         'django-cms',
+        'django-filer',
     ],
     extras_require={
         'development': [

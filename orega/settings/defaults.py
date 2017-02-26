@@ -26,6 +26,10 @@ INSTALLED_APPS = [
     'menus',
     'treebeard',
     'sekizai',
+    # Django Filer
+    'filer',
+    'easy_thumbnails',
+    'mptt',
 ]
 
 
@@ -51,7 +55,9 @@ ROOT_URLCONF = 'orega.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,4 +112,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = "/media/"
+
 SITE_ID = 1
+
+CMS_TEMPLATES = [
+    ('home.html', 'Home page template'),
+]
+
+THUMBNAIL_HIGH_RESOLUTION = True
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters'
+)
