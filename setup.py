@@ -17,7 +17,6 @@ setup(
     ],
     extras_require={
         'development': [
-            'django-debug-toolbar',
         ],
         'test': [],
     }

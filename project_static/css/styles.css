@@ -1,2 +1,13 @@
 #navigation-bar {
 }
+
+#lang-chooser {
+    display: inline-block;
+}
+#lang-chooser > a.lang {
+    color: dimgrey;
+}
+#lang-chooser > a.lang.active {
+    color: black;
+    font-weight: bold;
+}
