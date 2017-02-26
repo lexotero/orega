@@ -30,6 +30,10 @@ INSTALLED_APPS = [
     'filer',
     'easy_thumbnails',
     'mptt',
+    # Django CMS CKEditor
+    'djangocms_text_ckeditor',
+    # Plugins
+    'plugins.bootstrap',
 ]
 
 
@@ -117,7 +121,7 @@ MEDIA_URL = "/media/"
 SITE_ID = 1
 
 CMS_TEMPLATES = [
-    ('home.html', 'Home page template'),
+    ('base.html', 'Base page template'),
 ]
 
 THUMBNAIL_HIGH_RESOLUTION = True

@@ -13,6 +13,7 @@ setup(
         'django==1.10.5',
         'django-cms',
         'django-filer',
+        'djangocms-text-ckeditor',
     ],
     extras_require={
         'development': [
