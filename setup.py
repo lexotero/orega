@@ -10,7 +10,8 @@ setup(
     author='Alejandro Otero Ortiz de Cosca',
     author_email='aoterort@gmail.com',
     install_requires=[
-        'django==1.10.5'
+        'django==1.10.5',
+        'django-cms',
     ],
     extras_require={
         'development': [
