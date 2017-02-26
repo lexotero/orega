@@ -26,10 +26,6 @@ INSTALLED_APPS = [
     'menus',
     'treebeard',
     'sekizai',
-    # Django Filer
-    'filer',
-    'easy_thumbnails',
-    'mptt',
     # Django CMS CKEditor
     'djangocms_text_ckeditor',
     # Plugins
@@ -115,6 +111,9 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'project_static'),
+]
 
 MEDIA_URL = "/media/"
 

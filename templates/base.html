@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-{% load cms_tags sekizai_tags %}
+{% load staticfiles %}
+{% load cms_tags sekizai_tags menu_tags %}
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -9,11 +10,33 @@
     <title>{% page_attribute "page_title" %}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% render_block "css" %}
 </head>
 <body>
-{% cms_toolbar %}
-{% placeholder "content" %}
+
+<header>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="navigation-bar">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Orega</a>
+
+            <div class="collapse navbar-collapse" id="main-menu">
+                <ul class="navbar-nav mr-auto">
+                    {% show_menu %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    {% cms_toolbar %}
+    {% placeholder "content" %}
+</div>
+
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
